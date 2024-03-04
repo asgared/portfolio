@@ -11,9 +11,9 @@
   height: 200px;
 }
 .contentPerson{
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 9rem;
+  top: 2rem;
 }
 .person{
   background-image: url('/images/univerzoo/img_test.jpg');
@@ -23,4 +23,8 @@
   width: 15rem;
   height: 15rem;
 }
-
+.social-media-links a {
+  width: 38px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}

@@ -1,6 +1,4 @@
-import styles from "./page.module.css";
-// import Users from '@/components/Users';
-import Image from "next/image";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 async function fetchUsers(){
   const res = await fetch("https://reqres.in/api/users")
   const data = await res.json()
@@ -8,23 +6,25 @@ async function fetchUsers(){
 }
 
 async function IndexPage(){
+  const description = "Hola soy Diana y soy una médico veterinaria apasionada por el cuidado de los animales. Con dedicación y experiencia, estoy aquí para brindarles la mejor atención médica y cariño. Siempre lista para ayudarte a mantener a tu mascota sana y feliz.";
   const users = await fetchUsers();
   return(
     <div>
       <div  className='backgroundPatitas'>
-
-      </div>
-      <div className="contentPerson d-flex align-items-center justify-content-center w-100">
-        <div className="person"/>
-      </div>
-      <div className="card pt-5">
-        <div className="card-body">
-          <h5 className="card-title">M.V.Z Diana Granada</h5>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-          {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+        <div className="contentPerson d-flex align-items-center justify-content-center w-100">
+          <div className="person"/>
         </div>
       </div>
-      {/* <Users users={users}/> */}
+
+
+      <div className="card mt-3 mx-2">
+        <div className="card-body">
+          <h3 className="card-title">Diana Granada</h3>
+          <h6 className="card-title">M.V.Z</h6>
+          <p className="card-text">{description}</p>
+          <SocialMediaLinks />
+        </div>
+      </div>
     </div>
   )
 }

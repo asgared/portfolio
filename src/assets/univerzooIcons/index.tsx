@@ -1,0 +1,6 @@
+export { default as IconUniverzooFacebook } from "./IconUniverzooFacebook"
+export { default as IconUniverzooInstagram } from "./IconUniverzooInstagram"
+export { default as IconUniverzooLogo } from "./IconUniverzooLogo"
+export { default as IconUniverzooTelefono } from "./IconUniverzooTelefono"
+export { default as IconUniverzooTiktok } from "./IconUniverzooTiktok"
+export { default as IconUniverzooWhatsapp } from "./IconUniverzooWhatsapp"

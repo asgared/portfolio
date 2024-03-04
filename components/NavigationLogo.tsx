@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
-import IconUniverzooLogo from '@/src/assets/univerzooIcons/IconUniverzooLogo'
+import {IconUniverzooLogo} from '@/src/assets/univerzooIcons'
 function Navigation() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
