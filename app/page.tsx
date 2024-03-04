@@ -17,7 +17,7 @@ async function IndexPage(){
       </div>
 
 
-      <div className="card mt-3 mx-2">
+      <div className="card mt-5 mx-2">
         <div className="card-body">
           <h3 className="card-title">Diana Granada</h3>
           <h6 className="card-title">M.V.Z</h6>
