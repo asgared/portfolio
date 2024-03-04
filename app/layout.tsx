@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css" />
+        <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body className={inter.className}>
         {/* <Navigation /> */}
