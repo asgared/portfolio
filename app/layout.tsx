@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import Navigation from "@/components/Navigation";
 import NavigationLogo from "@/components/NavigationLogo";
 import "./globals.css";
 
@@ -24,7 +23,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon/favicon.ico" />
       </head>
       <body className={inter.className}>
-        {/* <Navigation /> */}
         <NavigationLogo />
         {children}
       </body>
