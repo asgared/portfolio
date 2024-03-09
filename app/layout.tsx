@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavigationLogo from "@/components/NavigationLogo";
 import "./globals.css";
+import { initializeGTM } from './GTM';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  initializeGTM();
   return (
     <html lang="es">
       <head>
