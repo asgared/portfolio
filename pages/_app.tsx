@@ -10,7 +10,7 @@ import { useEffect } from "react"
 
 const App = ({ Component, pageProps }: AppProps) => {
 	useEffect(() => {
-		TagManager.initialize({ gtmId: "GTM-KVRXZKJ" })
+		TagManager.initialize({ gtmId: "GTM-WJ8GWQNM" })
 	}, [])
 	return (
 		<ChakraProvider theme={darkTheme}>
