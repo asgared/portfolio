@@ -17,7 +17,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  initializeGTM();
+  // initializeGTM();
   return (
     <html lang="es">
       <head>
