@@ -11,7 +11,7 @@ const theme = extendTheme({
 		global: () => ({
 			body: {
 				bg: "#1A1A1A",
-				fontFamily: "optima-medium",
+				fontFamily: "boston-regular",
 				overflowX: "hidden",
 				backgroundImage: "linear-gradient(90deg, #33b7e2, #5e62b0, #dc307c)",
 			},

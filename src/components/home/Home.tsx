@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from '@/styles/header.module.css'
-import { HeaderUniverzoo, Avatar, TextCard } from "@/components/home"
+import { HeaderUniverzoo, Avatar, TextCard, Footer } from "@/components/home"
 
 export default function Home() {
   const titleCard = 'Diana Granada';
@@ -9,10 +9,12 @@ export default function Home() {
   const inviteCard = '¡Cóntactame, con gusto te atenderé!';
 
   return (
+
     <main className={styles.main}>
       <HeaderUniverzoo />
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
+      <Footer />
     </main>
   )
 }

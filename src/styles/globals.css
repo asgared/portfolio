@@ -1,18 +1,14 @@
 @font-face {
-  font-family: 'optima-regular';
-  src: url('../assets/fonts/optima-regular.ttf');
-}
-@font-face {
-  font-family: 'optima-medium';
-  src: url('../assets/fonts/optima-medium.ttf');
-}
-@font-face {
-  font-family: 'optima-bold';
-  src: url('../assets/fonts/optima-bold.ttf');
+  font-family: 'boston-light';
+  src: url('../assets/fonts/BostonLight.otf') format('opentype');
 }
 @font-face {
   font-family: 'boston-regular';
-  src: url('../assets/fonts/boston-regular.otf');
+  src: url('../assets/fonts/BostonRegular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'boston-semibold';
+  src: url('../assets/fonts/BostonSemiBold.otf') format('opentype');
 }
 
 
