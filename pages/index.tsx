@@ -1,41 +1,38 @@
 import { MainLayout, SecondLayout } from "@/components/layouts"
-import { Home, HeaderArca, CommingSoon }  from "@/components/home"
+import { Home }  from "@/components/home"
 
 function HomePage() {
-    // const homeStatus = 'READY'
+    const homeStatus = 'READY'
 
-	// const renderContent = () => {
-	// 	switch (homeStatus) {
-	// 		case 'READY':
-	// 			return <CommingSoon />
-	// 			// return <Home />
-	// 		default:
-	// 			return null
-	// 	}
-	// }
+	const renderContent = () => {
+		switch (homeStatus) {
+			case 'READY':
+				return <Home />
+			default:
+				return null
+		}
+	}
 
 	return (
-		<CommingSoon />
-        // <>
-		// 	{homeStatus === 'READY' ? (
-		// 		<MainLayout
-        //             title={"Cervecería artesanal El Arca | Sabores inspirados en la historia"}
-		// 			pageDescription={ "Descripción: En la cervecería artesanal El Arca, creamos cervezas únicas inspiradas en barcos legendarios de diferentes países. Nuestros productos son el resultado de años de experiencia y pasión por la elaboración de cerveza artesanal. Descubre nuestros tres estilos de cerveza y nuestras deliciosas galletas 'Naufragio', hechas con cebada sobrante de la elaboración de la cerveza. ¡Ven y saborea la historia con nosotros!" }
-		// 		>
-		// 			{/* <HeaderArca /> */}
-		// 			{renderContent()}
-		// 		</MainLayout>
-		// 	) : (
-		// 		<SecondLayout
-		// 			title={"Cervecería artesanal El Arca | Sabores inspirados en la historia"}
-		// 			pageDescription={
-		// 				"Test"
-		// 			}
-		// 		>
-		// 			{renderContent()}
-		// 		</SecondLayout>
-		// 	)}
-		// </>
+        <>
+			{homeStatus === 'READY' ? (
+				<MainLayout
+                    title={"Servicios Veterinarios | Univerzoo"}
+					pageDescription={ "Ofrecemos una amplia gama de servicios veterinarios para cuidar la salud y el bienestar de tus mascotas. Desde consultas generales hasta cirugías especializadas, ¡cuenta con nosotros para el mejor cuidado de tus animales!" }
+				>
+					{renderContent()}
+				</MainLayout>
+			) : (
+				<SecondLayout
+					title={"Servicios Veterinarios | Univerzoo"}
+					pageDescription={
+						"Test"
+					}
+				>
+					{renderContent()}
+				</SecondLayout>
+			)}
+		</>
 	)
 }
 

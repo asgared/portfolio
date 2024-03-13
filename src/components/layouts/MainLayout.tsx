@@ -1,5 +1,4 @@
 import Head from "next/head"
-import { Box } from "@chakra-ui/react"
 // import { Footer, Header } from "../ui"
 interface Props {
 	children: React.ReactNode | React.ReactNode[]
@@ -20,6 +19,11 @@ export default function MainLayout({
 				<title>{title}</title>
 				<meta name='title' content={title} />
 				<meta name='description' content={pageDescription} />
+				<meta name="keywords" content="veterinaria, mascotas, salud animal, consultas veterinarias, cirugía veterinaria" />
+                <meta name="robots" content="index, follow" />
+                <meta name="author" content="Alejandro Mendiola" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="canonical" href="https://univerzoo.mx/" />
 
 				<meta name='og:title' content={title} />
 				{imageUrl && <meta name='og:image' content={imageUrl} />}
@@ -29,21 +33,16 @@ export default function MainLayout({
 				{imageUrl && <meta property='og:image' content={imageUrl} />}
 				<meta property='og:description' content={pageDescription} />
 				<meta property='og:type' content='website' />
-				<meta property='og:url' content='https://www.taggy.com.mx/' />
+				<meta property='og:url' content='https://univerzoo.mx/' />
 
 				<meta property='twitter:card' content='summary_large_image' />
-				<meta property='twitter:url' content='https://www.taggy.com.mx/' />
+				<meta property='twitter:url' content='https://univerzoo.mx/' />
 				<meta property='twitter:title' content={title} />
 				<meta property='twitter:description' content={pageDescription} />
 				{imageUrl && <meta property='twitter:image' content={imageUrl} />}
 			</Head>
-
 			{/* <Header /> */}
-
-			<Box as={"main"} width={["100%", "100%", "90%", "80%"]} maxW={"1200px"} margin={"auto"} mb={18}>
-				{children}
-			</Box>
-
+			{children}
 			{/* <Footer /> */}
 		</>
 	)

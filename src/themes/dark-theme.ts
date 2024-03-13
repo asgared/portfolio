@@ -12,6 +12,8 @@ const theme = extendTheme({
 			body: {
 				bg: "#1A1A1A",
 				fontFamily: "optima-medium",
+				overflowX: "hidden",
+				backgroundImage: "linear-gradient(90deg, #33b7e2, #5e62b0, #dc307c)",
 			},
 		}),
 	},
@@ -46,7 +48,7 @@ const theme = extendTheme({
 	fonts: {
 		body: 'optima-medium',
 		heading: 'optima-medium',
-	  },
+	},
 })
 
 export default theme
