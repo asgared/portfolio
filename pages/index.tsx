@@ -17,14 +17,14 @@ function HomePage() {
         <>
 			{homeStatus === 'READY' ? (
 				<MainLayout
-                    title={"Servicios Veterinarios | Univerzoo"}
-					pageDescription={ "Ofrecemos una amplia gama de servicios veterinarios para cuidar la salud y el bienestar de tus mascotas. Desde consultas generales hasta cirugías especializadas, ¡cuenta con nosotros para el mejor cuidado de tus animales!" }
+                    title={"Directora Creativa | Ceci Garnica"}
+					pageDescription={ "Transformamos ideas en experiencias visuales que cautivan. Desde branding y diseño digital hasta estrategias creativas, damos vida a conceptos innovadores que conectan con tu audiencia." }
 				>
 					{renderContent()}
 				</MainLayout>
 			) : (
 				<SecondLayout
-					title={"Servicios Veterinarios | Univerzoo"}
+					title={"Directora Creativa | Ceci Garnica"}
 					pageDescription={
 						"Test"
 					}
