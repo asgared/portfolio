@@ -32,7 +32,7 @@ const HeaderUniverzoo = () => {
         />
         <HStack spacing={8} alignItems="center">
           <NextLink href="/" passHref>
-            <IconUniverzooLogo/>
+            {/* <IconUniverzooLogo/> */}
           </NextLink>
           <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
             <NextLink href="/about" passHref>

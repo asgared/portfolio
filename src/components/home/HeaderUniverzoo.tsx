@@ -5,7 +5,7 @@ import styles from '@/styles/header.module.css'
 const HeaderUniverzoo = () => {
     return (
         <Flex className={styles.header} h={16} alignItems="center" justifyContent="center">
-            <IconUniverzooLogo/>
+            {/* <IconUniverzooLogo/> */}
         </Flex>
     );
 };

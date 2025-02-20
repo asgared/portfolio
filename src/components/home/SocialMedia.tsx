@@ -8,8 +8,8 @@ import {
 } from '@/assets/univerzooIcons';
 
 const SocialMedia = () => {
-    const whatsappMessage = encodeURIComponent("Hola, me gustaría recibir más información sobre los servicios de la veterinaria. ¿Podrían ayudarme?");
-    const whatsappLink = `https://wa.me/5215540191430?text=${whatsappMessage}`;
+    const whatsappMessage = encodeURIComponent("Hola, me gustaría conocer más sobre tu trabajo creativo. ¿Me podrías ayudar con más información?");
+    const whatsappLink = `https://wa.me/5215580344733?text=${whatsappMessage}`;
 
     const handleClick = (eventCategory: string, eventAction: string) => {
         if ((window as any).dataLayer) {
@@ -26,7 +26,7 @@ const SocialMedia = () => {
             <Link href={whatsappLink} isExternal onClick={() => handleClick('WhatsApp', 'Click')}>
                 <Icon as={IconUniverzooWhatsapp} boxSize={['10', '12']} />
             </Link>
-            <Link href="https://www.facebook.com/univerzooveterinary" isExternal onClick={() => handleClick('Facebook', 'Click')}>
+            <Link href="https://www.facebook.com/" isExternal onClick={() => handleClick('Facebook', 'Click')}>
                 <Icon as={IconUniverzooFacebook} boxSize={['10', '12']} />
             </Link>
             <Link href="https://www.instagram.com/" isExternal onClick={() => handleClick('Instagram', 'Click')}>
@@ -35,7 +35,7 @@ const SocialMedia = () => {
             <Link href="https://www.tiktok.com/" isExternal onClick={() => handleClick('TikTok', 'Click')}>
                 <Icon as={IconUniverzooTiktok} boxSize={['10', '12']} />
             </Link>
-            <Link href="tel:+525519038953" onClick={() => handleClick('Phone', 'Click')}>
+            <Link href="tel:+525580344733" onClick={() => handleClick('Phone', 'Click')}>
                 <Icon as={IconUniverzooTelefono} boxSize={['10', '12']} />
             </Link>
         </Flex>

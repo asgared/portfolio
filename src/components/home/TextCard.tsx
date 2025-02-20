@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import { SocialMedia } from "@/components/home"
+import { SocialMedia } from "@/components/home";
 
 const TextCard = ({ title, subtitle, text, invite }: { title: string, subtitle: string, text: string, invite: string }) => {
   return (
@@ -10,7 +10,7 @@ const TextCard = ({ title, subtitle, text, invite }: { title: string, subtitle: 
       borderRadius="md" // Bordes redondeados
       maxW={{ base: '90%', md: '800px' }} // Ancho máximo adaptativo
       m="auto" // Centrar en pantallas grandes
-      mb={{ base: 16, md: 16 }} // Margen inferior responsivo
+      mb={{ base: 8, md: 8 }} // Margen inferior responsivo
       marginTop={{ base: 28, md: 28 }} // Margen superior responsivo
       boxShadow="md" // Sombra
       color="white" // Color de texto blanco

@@ -6,7 +6,7 @@ const AvatarCard = () => {
       justifyContent="center"
       alignItems="center"
       minHeight={{ base: '200px', sm: '280px' }}
-      background={`url('/images/background_univerzoo.jpg')`}
+      background={`url('/images/patron.png')`}
       backgroundSize={{ base: 'cover', sm: 'contain' }}
       backgroundPosition="center"
       position="relative"
@@ -20,11 +20,11 @@ const AvatarCard = () => {
         maxW={{ base: '90%', sm: '80%', md: '600px' }}
       >
         <Image
-            src="/images/avatar.jpg"
-            alt="Diana Granada"
+            src="/images/ceci_02.jpg"
+            alt="Cecilia Garnica"
             borderRadius="full"
             boxShadow="md"
-            w={{ base: '300px', sm: '400px' }} // Ancho
+            w={{ base: '300px', sm: '350px' }} // Ancho
             h={{ base: 'auto', sm: 'auto' }} // Altura
             transform="translateY(-50%) translate(-50%, -50%)"
             position="absolute"
