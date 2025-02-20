@@ -32,9 +32,9 @@ const SocialMedia = () => {
             <Link href="https://www.instagram.com/" isExternal onClick={() => handleClick('Instagram', 'Click')}>
                 <Icon as={IconUniverzooInstagram} boxSize={['10', '12']} />
             </Link>
-            <Link href="https://www.tiktok.com/" isExternal onClick={() => handleClick('TikTok', 'Click')}>
+            {/* <Link href="https://www.tiktok.com/" isExternal onClick={() => handleClick('TikTok', 'Click')}>
                 <Icon as={IconUniverzooTiktok} boxSize={['10', '12']} />
-            </Link>
+            </Link> */}
             <Link href="tel:+525580344733" onClick={() => handleClick('Phone', 'Click')}>
                 <Icon as={IconUniverzooTelefono} boxSize={['10', '12']} />
             </Link>

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from '@/styles/header.module.css'
-import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, Footer } from "@/components/home"
+import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, ImageGallery, Footer } from "@/components/home"
 
 export default function Home() {
   const titleCard = 'Ceci Garnica';
@@ -14,6 +14,15 @@ export default function Home() {
     { thumbnail: "/images/thumbnail/yucatan.jpg", url: "/videos/yucatan.mp4" },
     { thumbnail: "/images/thumbnail/yucatan.jpg", url: "/videos/yucatan.mp4" }
   ];
+  const images = [
+    { thumbnail: "/images/out_of_home/01.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/02.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/03.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/04.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/05.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/06.jpg", url: "/videos/yucatan.mp4" },
+    { thumbnail: "/images/out_of_home/07.jpg", url: "/videos/yucatan.mp4" }
+  ];
 
   return (
 
@@ -22,6 +31,7 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
+      <ImageGallery images={images} />
       <Footer />
     </main>
   )
