@@ -14,7 +14,7 @@ export default function Home() {
     { thumbnail: "/images/thumbnail/chiapas.png", url: "https://vimeo.com/1058766039/918bbbc6ac" },
     { thumbnail: "/images/thumbnail/cabos.png", url: "https://vimeo.com/1058767615/1916b56b49" },
     { thumbnail: "/images/thumbnail/yucatan.png", url: "https://vimeo.com/1058769974/7c7e33c637" },
-    { thumbnail: "/images/thumbnail/uk.png", url: "https://vimeo.com/1058763925/7b37b84551" }
+    { thumbnail: "/images/thumbnail/uk_1.png", url: "https://vimeo.com/1058763925/7b37b84551" }
   ];
   const sectionGraphic = 'Graphic';
   const numberGraphic = 2;
