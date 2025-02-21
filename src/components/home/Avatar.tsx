@@ -24,7 +24,7 @@ const AvatarCard = () => {
             alt="Cecilia Garnica"
             borderRadius="full"
             boxShadow="md"
-            w={{ base: '300px', sm: '350px' }} // Ancho
+            w={{ base: '280px', sm: '350px' }} // Ancho
             h={{ base: 'auto', sm: 'auto' }} // Altura
             transform="translateY(-50%) translate(-50%, -50%)"
             position="absolute"
