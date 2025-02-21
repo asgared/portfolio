@@ -17,6 +17,7 @@ export default function Home() {
     { thumbnail: "/images/thumbnail/uk.png", url: "https://vimeo.com/1058763925/7b37b84551" }
   ];
   const sectionGraphic = 'Graphic';
+  const numberGraphic = 2;
   const images_graphic = [
     { thumbnail: "/images/graphic/tulum.png", url: "/images/graphic/tulum.png" },
     { thumbnail: "/images/graphic/chiapas.png", url: "/images/graphic/chiapas.png" },
@@ -25,6 +26,7 @@ export default function Home() {
     { thumbnail: "/images/graphic/ano_dual.png", url: "/images/graphic/ano_dual.png" }
   ];
   const sectionOutHome = 'Out of Home';
+  const numberOutHome = 4;
   const images = [
     { thumbnail: "/images/out_of_home/01.jpg", url: "/images/out_of_home/01.jpg" },
     { thumbnail: "/images/out_of_home/02.jpg", url: "/images/out_of_home/02.jpg" },
@@ -42,8 +44,8 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
-      <ImageGallery sectionName={sectionGraphic} images={images_graphic} />
-      <ImageGallery sectionName={sectionOutHome} images={images} />
+      <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} images={images_graphic} />
+      <ImageGallery numberItems={numberOutHome}sectionName={sectionOutHome} images={images} />
       <Footer />
     </main>
   )
