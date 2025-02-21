@@ -10,19 +10,19 @@ export default function Home() {
   const inviteCard = 'Let’s connect and bring your vision to life—together, we can turn ideas into something truly extraordinary.';
   // const inviteCard = '¡Hablemos! Juntos podemos transformar ideas en algo extraordinario.';
   const videos = [
-    { thumbnail: "/images/thumbnail/tulum.png", url: "https://vimeo.com/1058767476/5902ade8df" },
-    { thumbnail: "/images/thumbnail/chiapas.png", url: "https://vimeo.com/1058766039/918bbbc6ac" },
-    { thumbnail: "/images/thumbnail/cabos.png", url: "https://vimeo.com/1058767615/1916b56b49" },
-    { thumbnail: "/images/thumbnail/yucatan.png", url: "https://vimeo.com/1058769974/7c7e33c637" },
-    { thumbnail: "/images/thumbnail/ano_dual.png", url: "https://vimeo.com/1058763925/7b37b84551" }
+    { thumbnail: "/images/thumbnail/TULUM.png", url: "https://vimeo.com/1058767476/5902ade8df" },
+    { thumbnail: "/images/thumbnail/CHIAPAS.png", url: "https://vimeo.com/1058766039/918bbbc6ac" },
+    { thumbnail: "/images/thumbnail/CABOS.png", url: "https://vimeo.com/1058767615/1916b56b49" },
+    { thumbnail: "/images/thumbnail/YUCATAN.png", url: "https://vimeo.com/1058769974/7c7e33c637" },
+    { thumbnail: "/images/thumbnail/UK.png", url: "https://vimeo.com/1058763925/7b37b84551" }
   ];
   const sectionGraphic = 'Graphic';
   const images_graphic = [
-    { thumbnail: "/images/thumbnail/tulum.png", url: "/images/thumbnail/tulum.png" },
-    { thumbnail: "/images/thumbnail/chiapas.png", url: "/images/thumbnail/chiapas.png" },
-    { thumbnail: "/images/thumbnail/cabos.png", url: "/images/thumbnail/cabos.png" },
-    { thumbnail: "/images/thumbnail/yucatan.png", url: "/images/thumbnail/yucatan.png" },
-    { thumbnail: "/images/thumbnail/ano_dual.png", url: "/images/thumbnail/ano_dual.png" }
+    { thumbnail: "/images/graphic/tulum.png", url: "/images/graphic/tulum.png" },
+    { thumbnail: "/images/graphic/chiapas.png", url: "/images/graphic/chiapas.png" },
+    { thumbnail: "/images/graphic/cabos.png", url: "/images/graphic/cabos.png" },
+    { thumbnail: "/images/graphic/yucatan.png", url: "/images/graphic/yucatan.png" },
+    { thumbnail: "/images/graphic/ano_dual.png", url: "/images/graphic/ano_dual.png" }
   ];
   const sectionOutHome = 'Out of Home';
   const images = [
