@@ -22,7 +22,7 @@ const SocialMedia = () => {
     };
 
     return (
-        <Flex justifyContent="space-around" alignItems="center" p={2} mt={8} wrap="wrap">
+        <Flex justifyContent="space-around" alignItems="center" margin={"auto"} p={2} mt={8} wrap="wrap" maxW={{ base: '100%', md: '60%' }}>
             <Link href={whatsappLink} isExternal onClick={() => handleClick('WhatsApp', 'Click')}>
                 <Icon as={IconUniverzooWhatsapp} boxSize={['10', '12']} />
             </Link>

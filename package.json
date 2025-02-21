@@ -30,7 +30,8 @@
     "react-gtm-module": "^2.0.11",
     "react-i18next": "^12.2.0",
     "react-icons": "^4.8.0",
-    "react-player": "^2.16.0"
+    "react-player": "^2.16.0",
+    "swiper": "^11.2.4"
   },
   "devDependencies": {
     "@cld-apis/types": "^0.1.6",

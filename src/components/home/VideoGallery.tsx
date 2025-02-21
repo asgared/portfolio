@@ -31,7 +31,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
         gap={4}
         p={{ base: 4, md: 6 }}
         borderRadius="md"
-        maxW={{ base: "90%", md: "800px" }}
+        maxW={{ base: "90%", md: "80%" }}
         m="auto"
         mb={{ base: 16, md: 16 }}
         marginTop={{ base: 4, md: 4 }}

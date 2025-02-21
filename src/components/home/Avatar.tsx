@@ -6,8 +6,8 @@ const AvatarCard = () => {
       justifyContent="center"
       alignItems="center"
       minHeight={{ base: '200px', sm: '280px' }}
-      background={`url('/images/patron.png')`}
-      backgroundSize={{ base: 'cover', sm: 'contain' }}
+      background={`url('/images/background.jpg')`}
+      backgroundSize={{ base: 'cover', sm: 'cover' }}
       backgroundPosition="center"
       position="relative"
     >

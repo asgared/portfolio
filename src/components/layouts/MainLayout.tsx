@@ -40,6 +40,8 @@ export default function MainLayout({
 				<meta property='twitter:title' content={title} />
 				<meta property='twitter:description' content={pageDescription} />
 				{imageUrl && <meta property='twitter:image' content={imageUrl} />}
+				<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
 			</Head>
 			{/* <Header /> */}
 			{children}
