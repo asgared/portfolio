@@ -11,14 +11,14 @@ const IconUniverzooWhatsapp = (props: JSX.IntrinsicAttributes & React.SVGProps<S
     <defs>
       <style>
         {
-          ".a0e3e360-2b6f-44a0-a354-0a092ad81003{fill:#139038;fill-rule:evenodd}"
+          ".a0e3e360-2b6f-44a0-a354-0a092ad81003{fill:#ffffff;fill-rule:evenodd}"
         }
       </style>
     </defs>
     <path
       d="M50 6.8A43.2 43.2 0 1 1 6.8 50 43.3 43.3 0 0 1 50 6.8M50 0a50 50 0 1 0 50 50A50 50 0 0 0 50 0Z"
       style={{
-        fill: "#139038",
+        fill: "#ffffff",
       }}
     />
     <path

@@ -3,6 +3,7 @@ import {
   IconUniverzooFacebook,
   IconUniverzooInstagram,
   IconUniverzooWhatsapp,
+  IconUniverzooEmail,
   IconUniverzooTiktok,
   IconUniverzooTelefono,
 } from '@/assets/univerzooIcons';
@@ -38,6 +39,9 @@ const SocialMedia = () => {
             {/* <Link href="tel:+525580344733" onClick={() => handleClick('Phone', 'Click')}>
                 <Icon as={IconUniverzooTelefono} boxSize={['10', '12']} />
             </Link> */}
+            <Link href="mailto:garniqui@gmail.com" onClick={() => handleClick('Email', 'Click')}>
+                <Icon as={IconUniverzooEmail} boxSize={['10', '12']} />
+            </Link>
         </Flex>
     );
 };

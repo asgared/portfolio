@@ -8,9 +8,10 @@ interface ImageGalleryProps {
   images: { thumbnail: string; url: string }[];
   sectionName: string;
   numberItems: number;
+  descriptionGallery: string;
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ images, sectionName, numberItems }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, sectionName, descriptionGallery, numberItems }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0); // Estado para el índice activo
 
@@ -34,6 +35,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, sectionName, number
           mb={4}
       >
           {sectionName}
+          <Text my={2} fontSize={{ base: 'md', md: 'lg' }} fontFamily={'boston-light'}>{descriptionGallery}</Text>
       </Text>
 
       {/* Carrusel con Swiper */}

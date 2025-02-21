@@ -18,7 +18,9 @@ export default function Home() {
   ];
   const videoUrl="https://player.vimeo.com/video/1058819206?h=02c8d401c4&badge=0&autopause=0&player_id=0&app_id=58479"
   const sectionName="Digital"
+
   const sectionGraphic = 'Graphic';
+  const descriptionGraphic = '';
   const numberGraphic = 2;
   const images_graphic = [
     { thumbnail: "/images/graphic/tulum.png", url: "/images/graphic/tulum.png" },
@@ -28,7 +30,7 @@ export default function Home() {
     { thumbnail: "/images/graphic/ano_dual.png", url: "/images/graphic/ano_dual.png" }
   ];
   const sectionOutHome = 'Out of Home';
-  // const descriptionOutHome = 'Time Square';
+  const descriptionOutHome = 'Time Square';
   const numberOutHome = 4;
   const images = [
     { thumbnail: "/images/out_of_home/01.jpg", url: "/images/out_of_home/01.jpg" },
@@ -48,8 +50,8 @@ export default function Home() {
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
       <VideoSection videoUrl={videoUrl} sectionName={sectionName} />
-      <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} images={images_graphic} />
-      <ImageGallery numberItems={numberOutHome} sectionName={sectionOutHome} images={images} />
+      <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} descriptionGallery={descriptionGraphic}images={images_graphic} />
+      <ImageGallery numberItems={numberOutHome} sectionName={sectionOutHome} descriptionGallery={descriptionOutHome} images={images} />
       <Footer />
     </main>
   )
