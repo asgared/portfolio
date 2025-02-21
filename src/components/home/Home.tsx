@@ -16,6 +16,15 @@ export default function Home() {
     { thumbnail: "/images/thumbnail/yucatan.png", url: "https://vimeo.com/1058769974/7c7e33c637" },
     { thumbnail: "/images/thumbnail/ano_dual.png", url: "https://vimeo.com/1058763925/7b37b84551" }
   ];
+  const sectionGraphic = 'Graphic';
+  const images_graphic = [
+    { thumbnail: "/images/thumbnail/tulum.png", url: "/images/thumbnail/tulum.png" },
+    { thumbnail: "/images/thumbnail/chiapas.png", url: "/images/thumbnail/chiapas.png" },
+    { thumbnail: "/images/thumbnail/cabos.png", url: "/images/thumbnail/cabos.png" },
+    { thumbnail: "/images/thumbnail/yucatan.png", url: "/images/thumbnail/yucatan.png" },
+    { thumbnail: "/images/thumbnail/ano_dual.png", url: "/images/thumbnail/ano_dual.png" }
+  ];
+  const sectionOutHome = 'Out of Home';
   const images = [
     { thumbnail: "/images/out_of_home/01.jpg", url: "/images/out_of_home/01.jpg" },
     { thumbnail: "/images/out_of_home/02.jpg", url: "/images/out_of_home/02.jpg" },
@@ -33,7 +42,8 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
-      <ImageGallery images={images} />
+      <ImageGallery sectionName={sectionGraphic} images={images_graphic} />
+      <ImageGallery sectionName={sectionOutHome} images={images} />
       <Footer />
     </main>
   )

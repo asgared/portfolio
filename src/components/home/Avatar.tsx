@@ -20,11 +20,11 @@ const AvatarCard = () => {
         maxW={{ base: '90%', sm: '80%', md: '600px' }}
       >
         <Image
-            src="/images/ceci_02.jpg"
+            src="/images/ceci_03.jpg"
             alt="Cecilia Garnica"
             borderRadius="full"
             boxShadow="md"
-            w={{ base: '280px', sm: '350px' }} // Ancho
+            w={{ base: '210px', sm: '250px' }} // Ancho
             h={{ base: 'auto', sm: 'auto' }} // Altura
             transform="translateY(-50%) translate(-50%, -50%)"
             position="absolute"

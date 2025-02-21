@@ -5,9 +5,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 interface ImageGalleryProps {
   images: { thumbnail: string; url: string }[];
+  sectionName: string;
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, sectionName }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -21,7 +22,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             mt={4} 
             mb={4}
         >
-            Out of Home 
+            {sectionName}
         </Text>
 
         {/* Carrusel con Swiper */}
