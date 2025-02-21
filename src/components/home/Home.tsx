@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from '@/styles/header.module.css'
-import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, ImageGallery, Footer } from "@/components/home"
+import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, VideoSection, ImageGallery, Footer } from "@/components/home"
 
 export default function Home() {
   const titleCard = 'Ceci Garnica';
@@ -16,6 +16,8 @@ export default function Home() {
     { thumbnail: "/images/thumbnail/yucatan.png", url: "https://vimeo.com/1058769974/7c7e33c637" },
     { thumbnail: "/images/thumbnail/uk_1.png", url: "https://vimeo.com/1058763925/7b37b84551" }
   ];
+  const videoUrl="https://player.vimeo.com/video/1058819206?h=02c8d401c4&badge=0&autopause=0&player_id=0&app_id=58479"
+  const sectionName="Digital"
   const sectionGraphic = 'Graphic';
   const numberGraphic = 2;
   const images_graphic = [
@@ -26,6 +28,7 @@ export default function Home() {
     { thumbnail: "/images/graphic/ano_dual.png", url: "/images/graphic/ano_dual.png" }
   ];
   const sectionOutHome = 'Out of Home';
+  // const descriptionOutHome = 'Time Square';
   const numberOutHome = 4;
   const images = [
     { thumbnail: "/images/out_of_home/01.jpg", url: "/images/out_of_home/01.jpg" },
@@ -44,8 +47,9 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
+      <VideoSection videoUrl={videoUrl} sectionName={sectionName} />
       <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} images={images_graphic} />
-      <ImageGallery numberItems={numberOutHome}sectionName={sectionOutHome} images={images} />
+      <ImageGallery numberItems={numberOutHome} sectionName={sectionOutHome} images={images} />
       <Footer />
     </main>
   )

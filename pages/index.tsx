@@ -17,14 +17,14 @@ function HomePage() {
         <>
 			{homeStatus === 'READY' ? (
 				<MainLayout
-                    title={"Directora Creativa | Ceci Garnica"}
+                    title={"Creative Ceci"}
 					pageDescription={ "Transformamos ideas en experiencias visuales que cautivan. Desde branding y diseño digital hasta estrategias creativas, damos vida a conceptos innovadores que conectan con tu audiencia." }
 				>
 					{renderContent()}
 				</MainLayout>
 			) : (
 				<SecondLayout
-					title={"Directora Creativa | Ceci Garnica"}
+					title={"Creative Ceci"}
 					pageDescription={
 						"Test"
 					}
