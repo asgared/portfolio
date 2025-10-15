@@ -28,7 +28,8 @@ import 'swiper/css/pagination'
 
 import { CATEGORIES, ReelCategory, ReelItem } from './data'
 import { NextImage } from '../ui/NextImage'
-import { VideoPlayer } from '../media/VideoPlayer'
+import VideoPlayer from '../media/VideoPlayer'
+import PlaceholderThumb from '../media/PlaceholderThumb'
 
 type CategoryReelsProps = {
   categories?: ReelCategory[]
@@ -94,39 +95,6 @@ const CategoryChip = ({
   )
 }
 
-const PlaceholderThumb = ({ item, category }: { item: ReelItem; category: ReelCategory }) => (
-  <Flex
-    align="center"
-    justify="center"
-    direction="column"
-    w="full"
-    h="full"
-    bgGradient={`linear(to-br, ${category.colorFrom}, ${category.colorTo})`}
-    color="whiteAlpha.900"
-    position="relative"
-    rounded="2xl"
-    overflow="hidden"
-  >
-    <Box position="absolute" inset={0} bg="blackAlpha.400" backdropFilter="blur(4px)" />
-    <Stack spacing={2} align="center" position="relative">
-      <TriangleRightIcon boxSize={10} />
-      <Text fontSize="lg" fontWeight="semibold" textAlign="center">
-        {item.title}
-      </Text>
-      {item.duration && (
-        <Text fontSize="sm" color="whiteAlpha.800">
-          {item.duration}
-        </Text>
-      )}
-    </Stack>
-    {item.duration && (
-      <Text position="absolute" bottom={4} right={4} fontSize="xs" fontWeight="medium" color="whiteAlpha.900">
-        {item.duration}
-      </Text>
-    )}
-  </Flex>
-)
-
 export const CategoryReels = ({ categories }: CategoryReelsProps) => {
   const availableCategories = useMemo(() => categories ?? CATEGORIES, [categories])
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -134,6 +102,12 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
   const [playingItemId, setPlayingItemId] = useState<string | null>(null)
   const isMobile = useBreakpointValue({ base: true, md: false })
   const modalSize = useBreakpointValue({ base: 'full', lg: '5xl' })
+  const slides = selectedCategory?.items
+  const hasValidSlides = Array.isArray(slides)
+
+  if (selectedCategory && !hasValidSlides) {
+    console.error('CategoryReels: invalid slides provided', slides)
+  }
 
   const handleSelectCategory = (category: ReelCategory) => {
     setSelectedCategory(category)
@@ -219,7 +193,7 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
           </ModalHeader>
           <ModalCloseButton top={{ base: 4, md: 6 }} right={{ base: 4, md: 6 }} size="lg" />
           <ModalBody px={{ base: 0, md: 10 }} py={{ base: 6, md: 10 }}>
-            {selectedCategory && (
+            {selectedCategory && hasValidSlides && (
               <Stack spacing={6} h="full">
                 <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
                 <Swiper
@@ -232,7 +206,7 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
                   style={{ paddingBottom: '2rem' }}
                   aria-label={`Carrusel de la categoría ${selectedCategory.name}`}
                 >
-                  {selectedCategory.items.map((item) => {
+                  {slides?.map((item) => {
                     const isPlaying = playingItemId === item.id
                     return (
                       <SwiperSlide key={item.id}>
@@ -241,19 +215,15 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
                             <Box position="relative" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.200">
                               {isPlaying ? (
                                 <VideoPlayer url={item.videoUrl} />
-                              ) : (
+                              ) : item.thumb ? (
                                 <>
-                                  {item.thumb ? (
-                                    <NextImage
-                                      src={item.thumb}
-                                      alt={item.title}
-                                      fill
-                                      sizes="(min-width: 992px) 800px, (min-width: 768px) 640px, 100vw"
-                                      style={{ objectFit: 'cover' }}
-                                    />
-                                  ) : (
-                                    <PlaceholderThumb item={item} category={selectedCategory} />
-                                  )}
+                                  <NextImage
+                                    src={item.thumb}
+                                    alt={item.title}
+                                    fill
+                                    sizes="(min-width: 992px) 800px, (min-width: 768px) 640px, 100vw"
+                                    style={{ objectFit: 'cover' }}
+                                  />
                                   <Flex
                                     position="absolute"
                                     inset={0}
@@ -274,6 +244,13 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
                                     </Button>
                                   </Flex>
                                 </>
+                              ) : (
+                                <PlaceholderThumb
+                                  title={item.title}
+                                  duration={item.duration}
+                                  onClick={() => setPlayingItemId(item.id)}
+                                  withAspectRatio={false}
+                                />
                               )}
                             </Box>
                           </AspectRatio>
