@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from '@/styles/header.module.css'
-import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, VideoSection, ImageGallery, Footer } from "@/components/home"
+import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, CategoryReels, VideoSection, ImageGallery, Footer } from "@/components/home"
 
 export default function Home() {
   const titleCard = 'Ceci Garnica';
@@ -49,6 +49,7 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
+      <CategoryReels />
       <VideoSection videoUrl={videoUrl} sectionName={sectionName} />
       <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} descriptionGallery={descriptionGraphic}images={images_graphic} />
       <ImageGallery numberItems={numberOutHome} sectionName={sectionOutHome} descriptionGallery={descriptionOutHome} images={images} />
