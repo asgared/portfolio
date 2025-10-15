@@ -1,9 +1,7 @@
 import { useMemo, useState } from 'react'
+import dynamic from 'next/dynamic'
 import {
-  AspectRatio,
   Box,
-  Button,
-  Flex,
   Heading,
   HStack,
   Modal,
@@ -18,17 +16,12 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { TriangleRightIcon } from '@chakra-ui/icons'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Keyboard, Navigation, Pagination } from 'swiper'
+import { CATEGORIES, ReelCategory } from './data'
 
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
-import { CATEGORIES, ReelCategory, ReelItem } from './data'
-import { NextImage } from '../ui/NextImage'
-import { VideoPlayer } from '../media/VideoPlayer'
+const CategoryReelsCarousel = dynamic(
+  () => import('./CategoryReelsCarousel').then((mod) => mod.CategoryReelsCarousel),
+  { ssr: false }
+)
 
 type CategoryReelsProps = {
   categories?: ReelCategory[]
@@ -93,39 +86,6 @@ const CategoryChip = ({
     </Box>
   )
 }
-
-const PlaceholderThumb = ({ item, category }: { item: ReelItem; category: ReelCategory }) => (
-  <Flex
-    align="center"
-    justify="center"
-    direction="column"
-    w="full"
-    h="full"
-    bgGradient={`linear(to-br, ${category.colorFrom}, ${category.colorTo})`}
-    color="whiteAlpha.900"
-    position="relative"
-    rounded="2xl"
-    overflow="hidden"
-  >
-    <Box position="absolute" inset={0} bg="blackAlpha.400" backdropFilter="blur(4px)" />
-    <Stack spacing={2} align="center" position="relative">
-      <TriangleRightIcon boxSize={10} />
-      <Text fontSize="lg" fontWeight="semibold" textAlign="center">
-        {item.title}
-      </Text>
-      {item.duration && (
-        <Text fontSize="sm" color="whiteAlpha.800">
-          {item.duration}
-        </Text>
-      )}
-    </Stack>
-    {item.duration && (
-      <Text position="absolute" bottom={4} right={4} fontSize="xs" fontWeight="medium" color="whiteAlpha.900">
-        {item.duration}
-      </Text>
-    )}
-  </Flex>
-)
 
 export const CategoryReels = ({ categories }: CategoryReelsProps) => {
   const availableCategories = useMemo(() => categories ?? CATEGORIES, [categories])
@@ -219,79 +179,14 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
           </ModalHeader>
           <ModalCloseButton top={{ base: 4, md: 6 }} right={{ base: 4, md: 6 }} size="lg" />
           <ModalBody px={{ base: 0, md: 10 }} py={{ base: 6, md: 10 }}>
-            {selectedCategory && (
+            {isOpen && selectedCategory && (
               <Stack spacing={6} h="full">
                 <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
-                <Swiper
-                  modules={[Navigation, Pagination, Keyboard]}
-                  navigation
-                  pagination={{ clickable: true }}
-                  keyboard={{ enabled: true }}
-                  spaceBetween={16}
-                  slidesPerView={1}
-                  style={{ paddingBottom: '2rem' }}
-                  aria-label={`Carrusel de la categoría ${selectedCategory.name}`}
-                >
-                  {selectedCategory.items.map((item) => {
-                    const isPlaying = playingItemId === item.id
-                    return (
-                      <SwiperSlide key={item.id}>
-                        <Stack spacing={4} h="full">
-                          <AspectRatio ratio={16 / 9} w="full">
-                            <Box position="relative" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.200">
-                              {isPlaying ? (
-                                <VideoPlayer url={item.videoUrl} />
-                              ) : (
-                                <>
-                                  {item.thumb ? (
-                                    <NextImage
-                                      src={item.thumb}
-                                      alt={item.title}
-                                      fill
-                                      sizes="(min-width: 992px) 800px, (min-width: 768px) 640px, 100vw"
-                                      style={{ objectFit: 'cover' }}
-                                    />
-                                  ) : (
-                                    <PlaceholderThumb item={item} category={selectedCategory} />
-                                  )}
-                                  <Flex
-                                    position="absolute"
-                                    inset={0}
-                                    align="center"
-                                    justify="center"
-                                    bgGradient="linear(to-t, blackAlpha.700, transparent 60%)"
-                                  >
-                                    <Button
-                                      leftIcon={<TriangleRightIcon />}
-                                      colorScheme="purple"
-                                      size="lg"
-                                      onClick={() => setPlayingItemId(item.id)}
-                                      aria-label={`Reproducir ${item.title}`}
-                                      px={8}
-                                      rounded="full"
-                                    >
-                                      Play
-                                    </Button>
-                                  </Flex>
-                                </>
-                              )}
-                            </Box>
-                          </AspectRatio>
-                          <Stack spacing={1} px={{ base: 6, md: 2 }} pb={{ base: 4, md: 0 }}>
-                            <Heading as="h5" fontSize="xl" fontFamily="var(--font-boston, inherit)">
-                              {item.title}
-                            </Heading>
-                            {item.duration && (
-                              <Text fontSize="sm" color="whiteAlpha.700">
-                                {item.duration}
-                              </Text>
-                            )}
-                          </Stack>
-                        </Stack>
-                      </SwiperSlide>
-                    )
-                  })}
-                </Swiper>
+                <CategoryReelsCarousel
+                  category={selectedCategory}
+                  playingItemId={playingItemId}
+                  onPlayClick={(id) => setPlayingItemId(id)}
+                />
               </Stack>
             )}
           </ModalBody>
