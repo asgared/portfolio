@@ -47,7 +47,7 @@ export default function MainLayout({
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={pageDescription} />
         {imageUrl && <meta property="twitter:image" content={imageUrl} />}
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        {/* FIX: la hoja de estilos de Swiper se inyecta desde _document.tsx para cumplir con Next.js. */}
       </Head>
       {/* <Header /> */}
       {children}

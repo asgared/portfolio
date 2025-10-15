@@ -18,7 +18,8 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
         textAlign="center" 
         color="white" 
         fontSize={{ base: "2xl", md: "4xl" }}
-        font-family={'boston-semibold'}
+        // FIX: usamos la propiedad camelCase correcta para estilos en JSX.
+        fontFamily={'boston-semibold'}
         mt={4} 
         mb={4}
       >

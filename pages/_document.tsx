@@ -8,7 +8,9 @@ export default class Document extends NextDocument {
 				<Head>
 					<link rel='manifest' href='/manifest.json' />
 					<link rel='apple-touch-icon' href='/icons/icon.png'></link>
-					<meta name='theme-color' content='#1A1A1A' />
+                                        <meta name='theme-color' content='#1A1A1A' />
+                                        {/* FIX: hoja de estilos global de Swiper movida desde Head a _document para seguir las buenas prácticas de Next.js. */}
+                                        <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css' />
 					<meta name="apple-mobile-web-app-capable" content="yes"/>
 					<meta name="mobile-web-app-capable" content="yes"/>
 					<meta name="referrer" content="no-referrer"/>

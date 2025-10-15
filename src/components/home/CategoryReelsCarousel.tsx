@@ -6,10 +6,12 @@ import {
   Button,
   Flex,
   Heading,
+  Icon,
   Stack,
   Text,
 } from '@chakra-ui/react'
-import { TriangleRightIcon } from '@chakra-ui/icons'
+// FIX: reemplazamos el ícono inexistente de Chakra por FaPlay para evitar componentes undefined.
+import { FaPlay } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Keyboard, A11y, Autoplay } from 'swiper/modules'
 
@@ -42,7 +44,8 @@ const PlaceholderThumb = ({ item, category }: { item: ReelItem; category: ReelCa
   >
     <Box position="absolute" inset={0} bg="blackAlpha.400" backdropFilter="blur(4px)" />
     <Stack spacing={2} align="center" position="relative">
-      <TriangleRightIcon boxSize={10} />
+      {/* FIX: ícono válido para el placeholder del carrusel. */}
+      <Icon as={FaPlay} boxSize={10} />
       <Text fontSize="lg" fontWeight="semibold" textAlign="center">
         {item.title}
       </Text>
@@ -101,7 +104,8 @@ export const CategoryReelsCarousel = ({ category, playingItemId, onPlayClick }: 
                       bgGradient="linear(to-t, blackAlpha.700, transparent 60%)"
                     >
                       <Button
-                        leftIcon={<TriangleRightIcon />}
+                        // FIX: el ícono TriangleRightIcon no existe en Chakra; usamos FaPlay.
+                        leftIcon={<Icon as={FaPlay} />}
                         colorScheme="purple"
                         size="lg"
                         onClick={() => onPlayClick(item.id)}

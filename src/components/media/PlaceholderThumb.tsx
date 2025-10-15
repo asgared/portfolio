@@ -1,13 +1,15 @@
-import { TriangleRightIcon } from '@chakra-ui/icons'
 import {
   AspectRatio,
   Box,
   Button,
+  Icon,
   Flex,
   Stack,
   Text,
   VisuallyHidden,
 } from '@chakra-ui/react'
+// FIX: Chakra UI no expone TriangleRightIcon; usamos el ícono FaPlay para evitar renders undefined.
+import { FaPlay } from 'react-icons/fa'
 
 export type PlaceholderThumbProps = {
   title: string
@@ -48,7 +50,8 @@ export default function PlaceholderThumb({
         px={6}
       >
         <Button
-          leftIcon={<TriangleRightIcon />}
+          // FIX: sustituimos el ícono inexistente por uno válido de react-icons.
+          leftIcon={<Icon as={FaPlay} />}
           colorScheme="purple"
           size="lg"
           onClick={onClick}
@@ -61,6 +64,8 @@ export default function PlaceholderThumb({
           <VisuallyHidden>{` ${title}`}</VisuallyHidden>
         </Button>
         <Stack spacing={1} align="center">
+          {/* FIX: icono visible usando FaPlay para el estado de placeholder. */}
+          <Icon as={FaPlay} boxSize={8} />
           <Text fontSize="lg" fontWeight="semibold" lineHeight="short">
             {title}
           </Text>
