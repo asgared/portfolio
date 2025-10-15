@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Environment Variables
+
+Configure the following variables in your `.env.local` file before running the project locally:
+
+| Variable | Description |
+| --- | --- |
+| `NEXT_PUBLIC_GTM_ID` | (Optional) Google Tag Manager container ID used for analytics. When omitted, GTM will remain disabled locally. |
+
 ## Getting Started
 
 First, run the development server:
