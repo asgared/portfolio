@@ -1,6 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from '@/styles/header.module.css'
-import { HeaderUniverzoo, Avatar, TextCard, VideoGallery, CategoryReels, VideoSection, ImageGallery, Footer } from "@/components/home"
+import HeaderUniverzoo from "@/components/home/HeaderUniverzoo"
+import Avatar from "@/components/home/Avatar"
+import TextCard from "@/components/home/TextCard"
+import VideoGallery from "@/components/home/VideoGallery"
+import CategoryReels from "@/components/home/CategoryReels"
+import VideoSection from "@/components/home/VideoSection"
+import ImageGallery from "@/components/home/ImageGallery"
+import Footer from "@/components/home/Footer"
 
 export default function Home() {
   const titleCard = 'Ceci Garnica';
