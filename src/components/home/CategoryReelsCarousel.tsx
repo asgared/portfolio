@@ -18,7 +18,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 import { NextImage } from '../ui/NextImage'
-import { VideoPlayer } from '../media/VideoPlayer'
+import VideoPlayer from '../media/VideoPlayer'
 import { ReelCategory, ReelItem } from './data'
 
 type CategoryReelsCarouselProps = {

@@ -10,6 +10,7 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Spinner,
   Stack,
   Text,
   VisuallyHidden,
@@ -20,10 +21,19 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import { CATEGORIES, ReelCategory, ReelItem } from './data'
-import { NextImage } from '../ui/NextImage'
-import VideoPlayer from '../media/VideoPlayer'
-import PlaceholderThumb from '../media/PlaceholderThumb'
+import { CATEGORIES, ReelCategory } from './data'
+
+const CategoryReelsCarousel = dynamic(() => import('./CategoryReelsCarousel'), {
+  ssr: false,
+  loading: () => (
+    <Stack align="center" justify="center" minH="320px" spacing={3}>
+      <Spinner color="white" size="lg" />
+      <Text fontSize="sm" color="whiteAlpha.700">
+        Cargando reels...
+      </Text>
+    </Stack>
+  ),
+})
 
 type CategoryReelsProps = {
   categories?: ReelCategory[]
@@ -187,93 +197,33 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
           </ModalHeader>
           <ModalCloseButton top={{ base: 4, md: 6 }} right={{ base: 4, md: 6 }} size="lg" />
           <ModalBody px={{ base: 0, md: 10 }} py={{ base: 6, md: 10 }}>
-<<<<<<< HEAD
-            {isOpen && selectedCategory && (
-              <Stack spacing={6} h="full">
-                <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
-                <CategoryReelsCarousel
-                  category={selectedCategory}
-                  playingItemId={playingItemId}
-                  onPlayClick={(id) => setPlayingItemId(id)}
-                />
-=======
-            {selectedCategory && hasValidSlides && (
-              <Stack spacing={6} h="full">
-                <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
-                <Swiper
-                  modules={[Navigation, Pagination, Keyboard]}
-                  navigation
-                  pagination={{ clickable: true }}
-                  keyboard={{ enabled: true }}
-                  spaceBetween={16}
-                  slidesPerView={1}
-                  style={{ paddingBottom: '2rem' }}
-                  aria-label={`Carrusel de la categoría ${selectedCategory.name}`}
-                >
-                  {slides?.map((item) => {
-                    const isPlaying = playingItemId === item.id
-                    return (
-                      <SwiperSlide key={item.id}>
-                        <Stack spacing={4} h="full">
-                          <AspectRatio ratio={16 / 9} w="full">
-                            <Box position="relative" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.200">
-                              {isPlaying ? (
-                                <VideoPlayer url={item.videoUrl} />
-                              ) : item.thumb ? (
-                                <>
-                                  <NextImage
-                                    src={item.thumb}
-                                    alt={item.title}
-                                    fill
-                                    sizes="(min-width: 992px) 800px, (min-width: 768px) 640px, 100vw"
-                                    style={{ objectFit: 'cover' }}
-                                  />
-                                  <Flex
-                                    position="absolute"
-                                    inset={0}
-                                    align="center"
-                                    justify="center"
-                                    bgGradient="linear(to-t, blackAlpha.700, transparent 60%)"
-                                  >
-                                    <Button
-                                      leftIcon={<TriangleRightIcon />}
-                                      colorScheme="purple"
-                                      size="lg"
-                                      onClick={() => setPlayingItemId(item.id)}
-                                      aria-label={`Reproducir ${item.title}`}
-                                      px={8}
-                                      rounded="full"
-                                    >
-                                      Play
-                                    </Button>
-                                  </Flex>
-                                </>
-                              ) : (
-                                <PlaceholderThumb
-                                  title={item.title}
-                                  duration={item.duration}
-                                  onClick={() => setPlayingItemId(item.id)}
-                                  withAspectRatio={false}
-                                />
-                              )}
-                            </Box>
-                          </AspectRatio>
-                          <Stack spacing={1} px={{ base: 6, md: 2 }} pb={{ base: 4, md: 0 }}>
-                            <Heading as="h5" fontSize="xl" fontFamily="var(--font-boston, inherit)">
-                              {item.title}
-                            </Heading>
-                            {item.duration && (
-                              <Text fontSize="sm" color="whiteAlpha.700">
-                                {item.duration}
-                              </Text>
-                            )}
-                          </Stack>
-                        </Stack>
-                      </SwiperSlide>
-                    )
-                  })}
-                </Swiper>
->>>>>>> origin/codex/fix-exports/imports-for-placeholderthumb-and-carousel-2025-10-15
+            {selectedCategory ? (
+              hasValidSlides ? (
+                <Stack spacing={6} h="full">
+                  <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
+                  <CategoryReelsCarousel
+                    category={selectedCategory}
+                    playingItemId={playingItemId}
+                    onPlayClick={(id) => setPlayingItemId(id)}
+                  />
+                </Stack>
+              ) : (
+                <Stack spacing={3} align="center" justify="center" py={12} textAlign="center">
+                  <Heading as="h4" fontSize="lg" color="white">
+                    Sin reels disponibles
+                  </Heading>
+                  <Text fontSize="sm" color="whiteAlpha.700" maxW="sm">
+                    Esta categoría todavía no tiene contenido disponible. Vuelve a intentarlo más tarde o elige otra
+                    categoría.
+                  </Text>
+                </Stack>
+              )
+            ) : (
+              <Stack align="center" justify="center" py={12} spacing={3}>
+                <Spinner color="white" size="lg" />
+                <Text fontSize="sm" color="whiteAlpha.700">
+                  Selecciona una categoría para ver sus reels.
+                </Text>
               </Stack>
             )}
           </ModalBody>
