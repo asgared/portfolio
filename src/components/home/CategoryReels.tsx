@@ -16,12 +16,14 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react'
-import { CATEGORIES, ReelCategory } from './data'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
-const CategoryReelsCarousel = dynamic(
-  () => import('./CategoryReelsCarousel').then((mod) => mod.CategoryReelsCarousel),
-  { ssr: false }
-)
+import { CATEGORIES, ReelCategory, ReelItem } from './data'
+import { NextImage } from '../ui/NextImage'
+import VideoPlayer from '../media/VideoPlayer'
+import PlaceholderThumb from '../media/PlaceholderThumb'
 
 type CategoryReelsProps = {
   categories?: ReelCategory[]
@@ -94,6 +96,12 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
   const [playingItemId, setPlayingItemId] = useState<string | null>(null)
   const isMobile = useBreakpointValue({ base: true, md: false })
   const modalSize = useBreakpointValue({ base: 'full', lg: '5xl' })
+  const slides = selectedCategory?.items
+  const hasValidSlides = Array.isArray(slides)
+
+  if (selectedCategory && !hasValidSlides) {
+    console.error('CategoryReels: invalid slides provided', slides)
+  }
 
   const handleSelectCategory = (category: ReelCategory) => {
     setSelectedCategory(category)
@@ -179,6 +187,7 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
           </ModalHeader>
           <ModalCloseButton top={{ base: 4, md: 6 }} right={{ base: 4, md: 6 }} size="lg" />
           <ModalBody px={{ base: 0, md: 10 }} py={{ base: 6, md: 10 }}>
+<<<<<<< HEAD
             {isOpen && selectedCategory && (
               <Stack spacing={6} h="full">
                 <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
@@ -187,6 +196,84 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
                   playingItemId={playingItemId}
                   onPlayClick={(id) => setPlayingItemId(id)}
                 />
+=======
+            {selectedCategory && hasValidSlides && (
+              <Stack spacing={6} h="full">
+                <VisuallyHidden as="h4">{`Carrusel de videos para ${selectedCategory.name}`}</VisuallyHidden>
+                <Swiper
+                  modules={[Navigation, Pagination, Keyboard]}
+                  navigation
+                  pagination={{ clickable: true }}
+                  keyboard={{ enabled: true }}
+                  spaceBetween={16}
+                  slidesPerView={1}
+                  style={{ paddingBottom: '2rem' }}
+                  aria-label={`Carrusel de la categoría ${selectedCategory.name}`}
+                >
+                  {slides?.map((item) => {
+                    const isPlaying = playingItemId === item.id
+                    return (
+                      <SwiperSlide key={item.id}>
+                        <Stack spacing={4} h="full">
+                          <AspectRatio ratio={16 / 9} w="full">
+                            <Box position="relative" rounded="2xl" overflow="hidden" borderWidth="1px" borderColor="whiteAlpha.200">
+                              {isPlaying ? (
+                                <VideoPlayer url={item.videoUrl} />
+                              ) : item.thumb ? (
+                                <>
+                                  <NextImage
+                                    src={item.thumb}
+                                    alt={item.title}
+                                    fill
+                                    sizes="(min-width: 992px) 800px, (min-width: 768px) 640px, 100vw"
+                                    style={{ objectFit: 'cover' }}
+                                  />
+                                  <Flex
+                                    position="absolute"
+                                    inset={0}
+                                    align="center"
+                                    justify="center"
+                                    bgGradient="linear(to-t, blackAlpha.700, transparent 60%)"
+                                  >
+                                    <Button
+                                      leftIcon={<TriangleRightIcon />}
+                                      colorScheme="purple"
+                                      size="lg"
+                                      onClick={() => setPlayingItemId(item.id)}
+                                      aria-label={`Reproducir ${item.title}`}
+                                      px={8}
+                                      rounded="full"
+                                    >
+                                      Play
+                                    </Button>
+                                  </Flex>
+                                </>
+                              ) : (
+                                <PlaceholderThumb
+                                  title={item.title}
+                                  duration={item.duration}
+                                  onClick={() => setPlayingItemId(item.id)}
+                                  withAspectRatio={false}
+                                />
+                              )}
+                            </Box>
+                          </AspectRatio>
+                          <Stack spacing={1} px={{ base: 6, md: 2 }} pb={{ base: 4, md: 0 }}>
+                            <Heading as="h5" fontSize="xl" fontFamily="var(--font-boston, inherit)">
+                              {item.title}
+                            </Heading>
+                            {item.duration && (
+                              <Text fontSize="sm" color="whiteAlpha.700">
+                                {item.duration}
+                              </Text>
+                            )}
+                          </Stack>
+                        </Stack>
+                      </SwiperSlide>
+                    )
+                  })}
+                </Swiper>
+>>>>>>> origin/codex/fix-exports/imports-for-placeholderthumb-and-carousel-2025-10-15
               </Stack>
             )}
           </ModalBody>

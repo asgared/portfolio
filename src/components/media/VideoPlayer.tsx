@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { Box } from '@chakra-ui/react'
 
-type VideoPlayerProps = {
+export type VideoPlayerProps = {
   url: string
   playing?: boolean
   controls?: boolean
@@ -12,7 +12,11 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   loading: () => null,
 })
 
-export const VideoPlayer = ({ url, playing = true, controls = true }: VideoPlayerProps) => {
+export default function VideoPlayer({
+  url,
+  playing = true,
+  controls = true,
+}: VideoPlayerProps) {
   if (!url) {
     return null
   }
@@ -23,5 +27,3 @@ export const VideoPlayer = ({ url, playing = true, controls = true }: VideoPlaye
     </Box>
   )
 }
-
-export default VideoPlayer
