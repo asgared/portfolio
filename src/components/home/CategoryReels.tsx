@@ -65,7 +65,8 @@ const CategoryChip = ({
       justifyContent="space-between"
       px={6}
       py={5}
-      minW={{ base: '220px', md: 'auto' }}
+      minW={{ base: '200px', md: 'auto' }}
+      maxW={{ base: '75vw', md: 'auto' }}
       textAlign="left"
       rounded="2xl"
       borderWidth="1px"
@@ -88,7 +89,7 @@ const CategoryChip = ({
             {category.description}
           </Text>
         )}
-        <Heading as="h3" fontSize="xl" fontFamily="var(--font-boston, inherit)" lineHeight="1.2">
+        <Heading as="h3" fontSize="xl" fontFamily="boston-semibold" lineHeight="1.2">
           {category.name}
         </Heading>
         <Text fontSize="sm" color="whiteAlpha.800">
@@ -125,22 +126,33 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
   }
 
   return (
-    <Box as="section" py={{ base: 12, md: 20 }} position="relative">
+    <Box as="section" py={{ base: 12, md: 20 }} position="relative"
+        p={{ base: 4, md: 6 }}
+        borderRadius="md"
+        maxW={{ base: "90%", md: "80%" }}
+        m="auto"
+        mb={{ base: 16, md: 16 }}
+        marginTop={{ base: 4, md: 4 }}
+        boxShadow="md">
       <Box
         position="absolute"
         inset={0}
-        bgGradient="radial( circle at top right, rgba(99, 102, 241, 0.2), transparent 55% )"
+        // bgGradient="radial( circle at top right, rgba(99, 102, 241, 0.2), transparent 55% )"
         pointerEvents="none"
       />
       <Stack spacing={6} position="relative">
-        <Stack spacing={3} maxW="3xl">
-          <Heading as="h2" fontSize={{ base: '3xl', md: '4xl' }} color="white" fontFamily="var(--font-boston, inherit)">
-            Featured Reels
-          </Heading>
-          <Text fontSize="lg" color="whiteAlpha.800">
-            Explora nuestras categorías destacadas y descubre colecciones de videos curados para tu próxima campaña.
-          </Text>
-        </Stack>
+        <Text 
+          as="h2" 
+          textAlign="center" 
+          color="white" 
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontFamily={'boston-semibold'}
+          mt={4} 
+          mb={4}
+      >
+          TV Ads
+          {/* <Text my={2} fontSize={{ base: 'md', md: 'lg' }} fontFamily={'boston-light'}>test</Text> */}
+      </Text>
 
         <Box display={{ base: 'block', md: 'none' }} overflowX="auto" pb={2} css={{ scrollbarWidth: 'thin' }}>
           <HStack spacing={4} align="stretch" minW="max-content">
@@ -190,7 +202,7 @@ export const CategoryReels = ({ categories }: CategoryReelsProps) => {
               <Text fontSize="sm" textTransform="uppercase" color="whiteAlpha.600">
                 Reel category
               </Text>
-              <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} fontFamily="var(--font-boston, inherit)">
+              <Heading as="h3" fontSize={{ base: '2xl', md: '3xl' }} fontFamily="boston-semibold">
                 {selectedCategory?.name}
               </Heading>
             </Stack>

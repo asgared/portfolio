@@ -56,9 +56,9 @@ export default function Home() {
       <Avatar />
       <TextCard title={titleCard} subtitle={subtitleCard} text={textCard} invite={inviteCard}/>
       <VideoGallery videos={videos} />
-      <CategoryReels />
       <VideoSection videoUrl={videoUrl} sectionName={sectionName} />
       <ImageGallery numberItems={numberGraphic} sectionName={sectionGraphic} descriptionGallery={descriptionGraphic}images={images_graphic} />
+      <CategoryReels />
       <ImageGallery numberItems={numberOutHome} sectionName={sectionOutHome} descriptionGallery={descriptionOutHome} images={images} />
       <Footer />
     </main>

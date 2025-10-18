@@ -46,20 +46,9 @@ const PlaceholderThumb = ({ item, category }: { item: ReelItem; category: ReelCa
     <Stack spacing={2} align="center" position="relative">
       {/* FIX: ícono válido para el placeholder del carrusel. */}
       <Icon as={FaPlay} boxSize={10} />
-      <Text fontSize="lg" fontWeight="semibold" textAlign="center">
-        {item.title}
-      </Text>
-      {item.duration && (
-        <Text fontSize="sm" color="whiteAlpha.800">
-          {item.duration}
-        </Text>
-      )}
+
     </Stack>
-    {item.duration && (
-      <Text position="absolute" bottom={4} right={4} fontSize="xs" fontWeight="medium" color="whiteAlpha.900">
-        {item.duration}
-      </Text>
-    )}
+
   </Flex>
 )
 
@@ -71,7 +60,7 @@ export const CategoryReelsCarousel = ({ category, playingItemId, onPlayClick }: 
     keyboard={{ enabled: true }}
     spaceBetween={16}
     slidesPerView={1}
-    style={{ paddingBottom: '2rem' }}
+    style={{ paddingBottom: '2rem', maxWidth: '100%' }}
     aria-label={`Carrusel de la categoría ${category.name}`}
   >
     {category.items.map((item) => {
