@@ -100,27 +100,27 @@ export const CATEGORIES: ReelCategory[] = [
       }
     ],
   },
-  {
-    id: 'burger-king',
-    name: 'Burger King',
-    description: 'Description here!',
-    colorFrom: '#facc15',
-    colorTo: '#f97316',
-    items: [
-      {
-        id: 'burger-king-1',
-        title: 'Stacker',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '01:40',
-      },
-      {
-        id: 'burger-king-2',
-        title: 'Boneless',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '03:05',
-      }
-    ],
-  },
+  // {
+  //   id: 'burger-king',
+  //   name: 'Burger King',
+  //   description: 'Description here!',
+  //   colorFrom: '#facc15',
+  //   colorTo: '#f97316',
+  //   items: [
+  //     {
+  //       id: 'burger-king-1',
+  //       title: 'Stacker',
+  //       videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
+  //       duration: '01:40',
+  //     },
+  //     {
+  //       id: 'burger-king-2',
+  //       title: 'Boneless',
+  //       videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
+  //       duration: '03:05',
+  //     }
+  //   ],
+  // },
   {
     id: 'pais-cultura',
     name: 'País Cultura',
