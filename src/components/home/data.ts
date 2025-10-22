@@ -26,8 +26,8 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'nafinsa-1',
         title: '¿Tú le prestarías?',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '02:45',
+        videoUrl: 'https://vimeo.com/1129018115',
+        duration: '00:49',
       }
     ],
   },
@@ -41,26 +41,26 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'liverpool-1',
         title: 'Teaser Yo no fui',
-        videoUrl: 'https://vimeo.com/1058766039/918bbbc6ac',
-        duration: '01:30',
+        videoUrl: 'https://vimeo.com/1129020655',
+        duration: '00:13',
       },
       {
         id: 'liverpool-2',
         title: 'Pantallota',
-        videoUrl: 'https://vimeo.com/1058767615/1916b56b49',
-        duration: '02:05',
+        videoUrl: 'https://vimeo.com/1129020400',
+        duration: '00:18',
       },
       {
         id: 'liverpool-3',
         title: 'Cocina',
-        videoUrl: 'https://vimeo.com/1058769974/7c7e33c637',
-        duration: '02:05',
+        videoUrl: 'https://vimeo.com/1129020895',
+        duration: '00:20',
       },
       {
         id: 'liverpool-4',
         title: 'Roomie',
-        videoUrl: 'https://vimeo.com/1058763925/7b37b84551',
-        duration: '02:05',
+        videoUrl: 'https://vimeo.com/1129020983',
+        duration: '00:20',
       },
     ],
   },
@@ -74,8 +74,8 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'amstel-ultra-1',
         title: 'Rafa Nadal',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '04:22',
+        videoUrl: 'https://vimeo.com/1129020738',
+        duration: '00:30',
       }
     ],
   },
@@ -89,14 +89,14 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'bodega-aurrera-1',
         title: 'Lanzamiento Mamá Lucha',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '02:10',
+        videoUrl: 'https://vimeo.com/1129020519',
+        duration: '00:20',
       },
       {
         id: 'bodega-aurrera-2',
         title: 'Otro que lucha contra las mochilas o algo así',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '01:55',
+        videoUrl: 'https://vimeo.com/1129021250',
+        duration: '00:30',
       }
     ],
   },
@@ -131,8 +131,8 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'pais-cultura-1',
         title: 'Feria del Libro, Cineteca',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '02:12',
+        videoUrl: 'https://vimeo.com/1129020052',
+        duration: '00:30',
       }
     ],
   },
@@ -146,8 +146,8 @@ export const CATEGORIES: ReelCategory[] = [
       {
         id: 'pais-economia-1',
         title: 'Industria Automotriz',
-        videoUrl: 'https://vimeo.com/1058767476/5902ade8df',
-        duration: '03:42',
+        videoUrl: 'https://vimeo.com/1129020229',
+        duration: '06:57',
       }
     ],
   },
