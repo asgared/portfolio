@@ -19,7 +19,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'nafinsa',
     name: 'Nafinsa',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#38bdf8',
     colorTo: '#a855f7',
     items: [
@@ -34,7 +34,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'liverpool',
     name: 'Liverpool',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#0ea5e9',
     colorTo: '#22d3ee',
     items: [
@@ -67,7 +67,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'amstel-ultra',
     name: 'Amstel Ultra',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#f97316',
     colorTo: '#ef4444',
     items: [
@@ -82,7 +82,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'bodega-aurrera',
     name: 'Bodega Aurrerá',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#ec4899',
     colorTo: '#f472b6',
     items: [
@@ -124,7 +124,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'pais-cultura',
     name: 'País Cultura',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#22c55e',
     colorTo: '#4ade80',
     items: [
@@ -139,7 +139,7 @@ export const CATEGORIES: ReelCategory[] = [
   {
     id: 'pais-economia',
     name: 'País Economía',
-    description: 'Description here!',
+    // description: 'Description here!',
     colorFrom: '#6366f1',
     colorTo: '#a855f7',
     items: [
